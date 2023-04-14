@@ -1,0 +1,102 @@
+/* 
+  display: grid;
+  place-items: center;
+
+
+  =>new way to center the contant in the center of the screen 
+
+
+*/
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: lightgreen;
+}
+/* we need aparent div to can hover for the both in the time to stop animation wark */
+.core {
+  position: relative;
+  display: flex;
+  width: fit-content;
+  height: 250px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 
+
+position: aboslute ; 
+=> make the ball move for the parent and you must put a 
+position for the parent (any position) 
+
+*/
+.ball {
+  position: absolute;
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  background-color: rgb(179, 179, 179);
+  animation: drop 2s ease-in-out infinite alternate;
+  top: -110px;
+}
+
+/* 
+
+animation-play-state:paused;
+=> use to make th animation stop
+
+*/
+
+.core:hover .ball {
+  animation-play-state: paused;
+}
+
+/* 
+
+if you want to move an element use transform:translate(0,0);
+
+*/
+
+@keyframes drop {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, 200px);
+  }
+  100 {
+    transform: translate(0, 0);
+  }
+}
+
+.shadow {
+  width: 300px;
+  height: 30px;
+  margin-top: 150px;
+  border-radius: 50%;
+  background-color: lightgray;
+  animation: shadow-1 1s ease-in-out infinite alternate;
+}
+.core:hover .shadow {
+  animation-play-state: paused;
+}
+
+/* 
+
+filter: blur(???px);
+=>make to change the transperation (الشفافيه) for the element
+
+*/
+
+@keyframes shadow-1 {
+  form {
+    width: 100px;
+    filter: blur(5px);
+  }
+  to {
+    width: 150px;
+    filter: blur(5px);
+  }
+}

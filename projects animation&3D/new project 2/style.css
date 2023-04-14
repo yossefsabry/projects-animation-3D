@@ -1,0 +1,78 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  background-color: rgb(22, 21, 21);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+section.class {
+  width: 400px;
+  height: 400px;
+  background-color: darkgrey;
+  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  position: relative;
+}
+img {
+  width: 300px;
+  background-color: white;
+  border-radius: 10px;
+  position: absolute;
+  /* top: -40px; */
+  transition: all 1s;
+}
+
+section.class:hover img {
+  transform: translate(0, -170px);
+  border-radius: 50%;
+  width: 200px;
+}
+
+/* focus is very important for the code 
+if the user went to see all the cards   */
+section.class:focus img {
+  transform: translate(0, -170px);
+  border-radius: 50%;
+  width: 200px;
+}
+
+.class-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+  color: whitesmoke;
+  font: 22px;
+  font-weight: bold;
+  opacity: 0;
+  transition: all 1s;
+  position: relative;
+}
+
+section.class:hover div.class-text {
+  transform: translate(0, 60px);
+  opacity: 1;
+}
+/* focus is very important for the code 
+if the user went to see all the cards   */
+section.class:focus div.class-text {
+  transform: translate(0, 60px);
+  opacity: 1;
+}
+
+p {
+  font-size: larger;
+}
